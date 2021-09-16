@@ -17,7 +17,7 @@ local Gui = Library:AddGui({
 })
  
 local Tab = Gui:AddTab("Main")
-local Category = Tab:AddCategory("Main `version: 1.11.2.3`")
+local Category = Tab:AddCategory("Main `version: 1.11.2.3` LOADED FROM GITHUB")
 local Label = Category:AddLabel("Working only on R6. Not working on r15.")
  
 --Enable script
