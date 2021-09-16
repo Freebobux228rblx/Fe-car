@@ -1,6 +1,6 @@
 ---YOU NOT SUPPOSTED HERE---
  
---Import
+--locals
 local Playr = game:GetService("Players")
 local Run = game:GetService("RunService")
 local Core = game:GetService("CoreGui")
@@ -11,13 +11,13 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
  
 --GUI
 local Gui = Library:AddGui({
-    Title = {"FE Car script", "Made by Freebob_ux228#1814, with HtB#1526."},
+    Title = {"FE Car script", "Made by Freebob_ux228#1814 and HtB#1526."},
     ThemeColor = Color3.fromRGB(0,250,250),
     ToggleKey = Enum.KeyCode.RightShift,
 })
  
 local Tab = Gui:AddTab("Main")
-local Category = Tab:AddCategory("Main `version: 1.11.2.3` LOADED FROM GITHUB")
+local Category = Tab:AddCategory("Main `version: 1.11.5` LOADED FROM GITHUB")
 local Label = Category:AddLabel("Working only on R6. Not working on r15.")
  
 --Enable script
@@ -50,16 +50,16 @@ local Tab = Gui:AddTab("Update logs")
 local Category = Tab:AddCategory("Update logs -> bit.ly/FeCar_Updates")
 
 
---The Lounge  --отдельное спасибо HtB#1526 за скрипт уведомления--
+--Report bug
 local Tab = Gui:AddTab("Discords links")
-local Category = Tab:AddCategory("My Discord for report bugs Freebob_ux228#1814")
-local Button = Category:AddButton("The lounge", function()
-    setclipboard("https://discord.gg/the-lounge")
+local Category = Tab:AddCategory("My Discord for report bugs")
+local Button = Category:AddButton("Copy", function()
+    setclipboard("Freebob_ux228#1814")
     Library:Notify("Check your clipboard")
     local json = {
    ["cmd"] = "INVITE_BROWSER",
    ["args"] = {
-       ["code"] = "the-lounge"
+       ["code"] = "1814"
    },
    ["nonce"] = 'a'
 }
@@ -84,7 +84,7 @@ local Button = Category:AddButton("Close GUI", function()
     Core["FE Car script Made by Freebob_ux228#1814, with HtB#1526."]:Destroy()
 end)
  
---Notif --отдельное спасибо HtB#1526 за скрипт уведомления--
+--Notif
 Library:Notify("Hey,I release exp edition. Press ✓ to get link", function(bool)
     if bool == true then
         setclipboard("pastebin.com/JLYdMnit")
