@@ -1,3 +1,7 @@
+--local asset = instance.new("asset")
+--local script = instance.new("script")
+--local get = instance.new("get")
+--local response = instance.new("response")
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local ImageLabel = Instance.new("ImageLabel")
@@ -41,6 +45,11 @@ EzModsLogo.Size = UDim2.new(0, 174, 0, 100)
 EzModsLogo.ZIndex = 4
 EzModsLogo.Image = "rbxassetid://4884056983"
  
+--asset.script = "6632877775"
+--get.script
+--response 9.9
+--wait 9.9
+
 ImageLabel:TweenPosition(UDim2.new(-0.205, 0,0.155, 0), Enum.EasingDirection.Out)wait(0.1)
 wait(0.9)
 EzModsLogo.Rotation = EzModsLogo.Rotation + 0.5
