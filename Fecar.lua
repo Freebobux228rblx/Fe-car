@@ -17,7 +17,7 @@ local Gui = Library:AddGui({
 })
  
 local Tab = Gui:AddTab("Main")
-local Category = Tab:AddCategory("Main `version: 1.11.5` LOADED FROM GITHUB")
+local Category = Tab:AddCategory("Main `version: 1.11.6` LOADED FROM GITHUB")
 local Label = Category:AddLabel("Working only on R6. Not working on r15.")
  
 --Enable script
@@ -81,7 +81,7 @@ end)
 local Tab = Gui:AddTab("Close")
 local Category = Tab:AddCategory("Close")
 local Button = Category:AddButton("Close GUI", function()
-    Core["FE Car script Made by Freebob_ux228#1814, with HtB#1526."]:Destroy()
+    Core["FE Car script Made by Freebob_ux228#1814 and HtB#1526."]:Destroy()
 end)
  
 --Notif
