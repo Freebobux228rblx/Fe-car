@@ -21,7 +21,7 @@ local Category = Tab:AddCategory("Minimize")
 local Label = Category:AddLabel("Press right shift")
 
 local Tab = Gui:AddTab("Main")
-local Category = Tab:AddCategory("Main `version: 1.12.1` LOADED FROM GITHUB")
+local Category = Tab:AddCategory("Main `version: 1.12.2` LOADED FROM GITHUB")
 local Label = Category:AddLabel("Working only on R6. Not working on r15.")
  
 --Enable script
@@ -35,7 +35,10 @@ local Category = Tab:AddCategory("Settings")
 local Box = Category:AddBox("Height", function(str)
     Float_Height=str local a=1 G=game _=wait p=G:GetService("Players").LocalPlayer.Character p:FindFirstChild("Humanoid").HipHeight=Float_Height _(1.5) t=.4 for a=1,a do repeat p:FindFirstChild("Humanoid").HipHeight=Float_Height-n _(t) p:FindFirstChild("Humanoid").HipHeight=Float_Height+n _(t)until p:FindFirstChild("Humanoid").Health==0 end
 end)
- 
+local Box = Category:AddBox("Speed", function(speed)
+    LocalPlayer.Character.Humanoid.WalkSpeed = speed
+end)
+
 --Presets
 --1 M/s = 3.6 km/h--
 local Category = Tab:AddCategory("Presets")
