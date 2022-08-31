@@ -2,7 +2,7 @@ local LocalPlayer = game:GetService("Players").LocalPlayer
 local hum = LocalPlayer.Character.Humanoid
 local IreXion = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/IreXion-UI-Library/main/IreXion%20UI%20Library"))()
 local UI = IreXion:AddGui{
-    Title = {"FE Car", "Fork by Freebob_ux228},
+    Title = {"FE Car", "Fork by Freebob_ux228"},
     ThemeColor = Color3.fromRGB(0,250,250),
     ToggleKey = Enum.KeyCode.RightShift,
 }
