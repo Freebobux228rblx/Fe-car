@@ -2,19 +2,18 @@ local LocalPlayer = game:GetService("Players").LocalPlayer
 local hum = LocalPlayer.Character.Humanoid
 local IreXion = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/IreXion-UI-Library/main/IreXion%20UI%20Library"))()
 local UI = IreXion:AddGui{
-    Title = {"FE Car", "Fork by Freebob_ux228 and HtB"},
+    Title = {"FE Car", "Fork by Freebob_ux228},
     ThemeColor = Color3.fromRGB(0,250,250),
     ToggleKey = Enum.KeyCode.RightShift,
 }
 local Tab = UI:AddTab"UI"
 local Category = Tab:AddCategory""
-Category:AddLabel"Version: 1.13 [NOT MAINTAINED ANYMORE]"
+Category:AddLabel"Version: 1.13.1 [NOT MAINTAINED ANYMORE]"
 Category:AddLabel"Press right shift to minimize"
 Category:AddButton("UnLock FPS",function()
     if type(setfpscap)=="function"then 
         setfpscap(math.random(360,1024))
-    else
-        IreXion:Notify"Your executor does not supporting setfpscap()"
+    else IreXion:Notify"Your executor does not supporting setfpscap()"
     end
 end)
 local CurrentCarAnim
@@ -31,7 +30,7 @@ Category:AddButton("Close UI", function()
     IreXion:Notify("You're sure to close UI?",function(fuckniggers)
         if fuckniggers then 
             UnLoad()
-            game:GetService("CoreGui")["FE Car Fork by Freebob_ux228 and HtB"]:Destroy()
+            game:GetService("CoreGui")["FE Car Fork by Freebob_ux228"]:Destroy()
         end
     end)
 end)
@@ -39,6 +38,10 @@ local Tab = UI:AddTab"Main"
 local Category = Tab:AddCategory"Main"
 Category:AddLabel"Working only on R6. Not working on R15!"
 local function LoadThisShit(speeeeed)
+    if hum.RigType == Enum.HumanoidRigType.R15 then 
+        IreXion:Notify"You trying to run script on R15!"
+        return false
+    end
     UnLoad()
     hum.WalkSpeed = speeeeed
     hum.JumpPower = 1
@@ -91,9 +94,11 @@ Category:AddButton("60 walkspeed Preset", function()LoadThisShit(60)end)
 Category:AddButton("90 walkspeed Preset", function()LoadThisShit(90)end)
 Category:AddButton("120 walkspeed Preset", function()LoadThisShit(120)end)
 Category:AddButton("150 walkspeed Preset", function()LoadThisShit(150)end)
-Category:AddBox("Custom",function(nig)LoadThisShit(nig)end)
+Category:AddBox("Custom",function(nig)
+    if tonumber(nig)~=nil and nig~="inf"then LoadThisShit(nig)end
+end)
 local Tab = UI:AddTab"Report a bug"
-local Category = Tab:AddCategory"Make a issuse"
+local Category = Tab:AddCategory"Make a issue"
 Category:AddButton("Url to issues",function()
     setclipboard("github.com/Freebobux228rblx/Fe-car/issues/new")
 end)
