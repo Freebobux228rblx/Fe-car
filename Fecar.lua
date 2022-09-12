@@ -1,5 +1,4 @@
 local LocalPlayer = game:GetService("Players").LocalPlayer
-local hum = LocalPlayer.Character.Humanoid
 local IreXion = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/IreXion-UI-Library/main/IreXion%20UI%20Library"))()
 local UI = IreXion:AddGui{
     Title = {"FE Car", "Fork by Freebob_ux228"},
