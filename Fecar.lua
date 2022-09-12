@@ -8,7 +8,7 @@ local UI = IreXion:AddGui{
 }
 local Tab = UI:AddTab"UI"
 local Category = Tab:AddCategory""
-Category:AddLabel"Version: 1.13.1 [NOT MAINTAINED ANYMORE]"
+Category:AddLabel"Version: 1.13.2 [NOT MAINTAINED ANYMORE]"
 Category:AddLabel"Press right shift to minimize"
 Category:AddButton("UnLock FPS",function()
     if type(setfpscap)=="function"then 
@@ -22,7 +22,7 @@ local function UnLoad()
     if CurrentCarAnim and CurrentCarAnim2 then 
         CurrentCarAnim:Stop()CurrentCarAnim2:Destroy()
         CurrentCarAnim,CurrentCarAnim2=nil,nil
-        hum.WalkSpeed=16 hum.HipHeight=0 hum.JumpPower=48
+        LocalPlayer.Character.Humanoid.WalkSpeed=16 LocalPlayer.Character.Humanoid.HipHeight=0 LocalPlayer.Character.Humanoid.JumpPower=48
         for _, p in pairs(LocalPlayer.Character:GetDescendants()) do if p.ClassName == "Part" then p.CustomPhysicalProperties = nil end end
     end
 end
@@ -38,17 +38,17 @@ local Tab = UI:AddTab"Main"
 local Category = Tab:AddCategory"Main"
 Category:AddLabel"Working only on R6. Not working on R15!"
 local function LoadThisShit(speeeeed)
-    if hum.RigType == Enum.HumanoidRigType.R15 then 
+    if LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then 
         IreXion:Notify"You trying to run script on R15!"
         return false
     end
     UnLoad()
-    hum.WalkSpeed = speeeeed
-    hum.JumpPower = 1
+    LocalPlayer.Character.Humanoid.WalkSpeed = speeeeed
+    LocalPlayer.Character.Humanoid.JumpPower = 1
     local Float_Height = "-1.03"
     CurrentCarAnim2 = Instance.new("Animation",LocalPlayer.Character)
     CurrentCarAnim2.AnimationId = "rbxassetid://129342287"
-    CurrentCarAnim = hum:LoadAnimation(CurrentCarAnim2)
+    CurrentCarAnim = LocalPlayer.Character.Humanoid:LoadAnimation(CurrentCarAnim2)
     CurrentCarAnim:Play()
     CurrentCarAnim:AdjustSpeed(1)
     for _, a in pairs(LocalPlayer.Character:GetDescendants()) do
@@ -57,15 +57,15 @@ local function LoadThisShit(speeeeed)
         end
     end
     local a = 1
-    hum.HipHeight = Float_Height
+    LocalPlayer.Character.Humanoid.HipHeight = Float_Height
     wait(1.5)
     for _ = 1, a do
         repeat
-            hum.HipHeight = Float_Height - n
+            LocalPlayer.Character.Humanoid.HipHeight = Float_Height - n
             wait(.4)
-            hum.HipHeight = Float_Height + n
+            LocalPlayer.Character.Humanoid.HipHeight = Float_Height + n
             wait(.4)
-        until hum.Health == 0
+        until LocalPlayer.Character.Humanoid.Health == 0
     end
 end
 Category:AddButton("Enable Car",function()LoadThisShit(90)end)
